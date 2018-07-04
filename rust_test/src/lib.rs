@@ -1,4 +1,4 @@
-//extern crate rand;
+extern crate rand;
 
 #[no_mangle]
 pub extern "C" fn add_to( x : i32) -> i32 {
@@ -7,8 +7,7 @@ pub extern "C" fn add_to( x : i32) -> i32 {
 
 #[no_mangle]
 pub extern "C" fn rust_test_random() -> i32 {
-    //rand::random::<i32>()
-    0
+    rand::random::<i32>()
 }
 
 
