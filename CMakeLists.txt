@@ -3,6 +3,7 @@ project (RustCPPTest)
 
 set (RUSTCPP_VERSION_MAJOR 0)
 set (RUSTCPP_VERSION_MINOR 1)
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,--no-as-needed")
 
 configure_file (
   "${PROJECT_SOURCE_DIR}/Config.h.in"
@@ -32,6 +33,7 @@ target_link_libraries(
   RustCPPTest
   debug "${PROJECT_SOURCE_DIR}/rust_test/target/debug/librust_test.a"
   optimized "${PROJECT_SOURCE_DIR}/rust_test/target/release/librust_test.a"
+  pthread dl
 )
 
 set_target_properties(RustCPPTest PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)

@@ -1,4 +1,5 @@
 extern crate rand;
+extern crate libc;
 
 #[no_mangle]
 pub extern "C" fn add_to( x : i32) -> i32 {
